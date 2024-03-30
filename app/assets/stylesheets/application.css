@@ -20,4 +20,10 @@
  *= require edit_item
  *= require delete_item
  *= require item_actions
+ *= require item_category
+ *= require button
+ *= require text
+ *= require form
+ *= require reset
+ *= require form_select_field
  */

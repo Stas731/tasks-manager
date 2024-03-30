@@ -9,7 +9,7 @@
   <p><%= form.text_field :user_id, class: 'form-text-field' %></p>
 
   <p class="mt"><%= form.label :category_id, "Категория" %></p>
-  <p><%= form.text_field :category_id, class: 'form-text-field' %></p>
+  <p><%= form.collection_select :category_id, Category.all, :id, :name, {}, {class: 'form-select-field'} %></p>
 
   <p class="mt"><%= form.submit 'Сохранить задачу', class: 'button button-main'%></p>
 <% end %>
