@@ -3,5 +3,5 @@ class Task < ApplicationRecord
   belongs_to :category
   has_many :task_tags
   has_many :tags, through: :task_tags
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

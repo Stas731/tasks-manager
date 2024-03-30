@@ -1,0 +1,7 @@
+<div class="container">
+  <h2 class="title-lg mb">Категория <%= @category.id %></h2>
+
+  <%= render 'category', category: @category %>
+
+  <p class="mt"><%= link_to "Все категории", categories_path %></p>
+</div>

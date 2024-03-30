@@ -1,0 +1,18 @@
+<div class="item mb-sm">
+  <h2 class="item-title"><%= task.title %></h2>
+  <p class="item-description"><%= task.description %></p>
+  <p class="item-category"><%= task.category.name %></p>
+</div>
+
+<div class="item-footer text-sm">
+    <div class="item-date text-grey">
+      <%= l(task.created_at, format: :short) %>
+    </div>
+
+    <div class="item-actions">
+      <%= link_to fa_icon("pencil"), edit_task_path(task),
+        title: 'изменить вопрос', class: 'edit-item'%>
+      <%= button_to fa_icon("trash-o"), task_path(task),
+        method: :delete, title: 'удалить вопрос', class: 'delete-item'%>
+    </div>
+</div>
