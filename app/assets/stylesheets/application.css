@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require item
+ *= require item_footer
+ *= require item_title
+ *= require item_description
+ *= require edit_item
+ *= require delete_item
  */

@@ -1,0 +1,15 @@
+<div class="container">
+    <p class="mt">
+      <%= link_to "Создать новую задачу", new_task_path, class: 'button button-main' %>
+    </p>
+</div>
+
+<div class="container mt-sm">
+  <h2 class="title-lg ">Все задачи</h2>
+</div>
+
+<% @tasks.each do |task| %>
+    <div class="mt-sm container">
+    <%= render task %> 
+    </div>
+<% end %>
