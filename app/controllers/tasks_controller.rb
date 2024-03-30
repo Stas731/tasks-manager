@@ -4,6 +4,8 @@ class TasksController < ApplicationController
   # GET /tasks
   def index
     @tasks = Task.all
+   
+   # @tasks = Task.where(category_id: params[:category_id]) if params[:category_id].present?
   end
 
   # GET /tasks/1

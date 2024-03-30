@@ -19,4 +19,5 @@
  *= require item_description
  *= require edit_item
  *= require delete_item
+ *= require item_actions
  */
