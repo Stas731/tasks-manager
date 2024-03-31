@@ -1,0 +1,7 @@
+<div class="container">
+  <h2 class="title-lg mb">Задача: <%= @task.id %></h2>
+
+  <%= render 'task', task: @task %>
+
+  <p class="mt"><%= link_to "Все задачи", tasks_path %></p>
+</div>

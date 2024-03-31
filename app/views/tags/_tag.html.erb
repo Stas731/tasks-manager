@@ -1,0 +1,14 @@
+<div class="item mb-sm">
+  <h2 class="item-title"><%= tag.name %></h2>
+</div>
+
+<div class="item-footer text-sm">
+    <div class="item-date"></div>
+
+    <div class="item-actions">
+      <%= link_to fa_icon("pencil"), edit_tag_path(tag),
+        title: 'изменить тег', class: 'edit-item'%>
+      <%= button_to fa_icon("trash-o"), tag_path(tag),
+        method: :delete, title: 'удалить тег', class: 'delete-item'%>
+    </div>
+</div>

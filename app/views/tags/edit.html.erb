@@ -1,0 +1,7 @@
+<div class="container">
+    <h2 class="title-lg mb">Редактирование тега: <%= @tag.id %></h2>
+
+    <%= render 'form', tag: @tag %>
+
+    <p class="mt"><%= link_to "Все теги", tags_path %></p>
+</div>
