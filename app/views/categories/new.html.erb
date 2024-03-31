@@ -1,5 +1,7 @@
 <div class="container">
-<h2 class="title-lg mb">Новая категория</h2>
+    <h2 class="title-lg mb">Новая категория:</h2>
 
-<%= render 'form', category: @category %>
+    <%= render 'form', category: @category %>
+
+    <p class="mt"><%= link_to "Все категории", categories_path %></p>
 </div>
