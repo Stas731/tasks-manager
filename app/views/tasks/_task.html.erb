@@ -1,12 +1,17 @@
-<div class="item mb-sm">
+<div class="yellow-cell" style="border: 1px solid black; padding: 10px;">
   <h2 class="item-title"><%= task.title %></h2>
   <p class="item-description"><%= task.description %></p>
-  <p class="item-category"><%= task.category.name %></p>
 </div>
 
-<div class="item-footer text-sm">
+<div class="item-footer text-sm" style="border: 1px solid black; padding: 10px;">
     <div class="item-date text-grey">
       <%= l(task.created_at, format: :short) %>
+      <% if task.category.present? %>
+      <p class="item-category"><%= task.category.name %></p>
+    <% end %>
+    <% if task.tags.present? %>
+      <p>Tags: <%= task.tags.map(&:name).join(' ') %></p>
+    <% end %>
     </div>
 
     <div class="item-actions">

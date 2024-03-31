@@ -24,6 +24,12 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     @task = Task.new(task_params)
+    tag_names = params[:task][:tag_names].split(',')
+
+    tag_names.each do |tag_name|
+      @tag = Tag.find_or_create_by(name: tag_name.strip)
+      @task.tags << @tag
+    end
 
     if @task.save
       redirect_to @task, notice: 'Task was successfully created.'

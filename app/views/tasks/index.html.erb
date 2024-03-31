@@ -1,6 +1,7 @@
 <div class="container mt-sm">
   <h2 class="title-lg ">Все задачи:</h2>
-    <div class="mt-sm">
+    <div class="mt-sm" style="display: flex; align-items: center;">
+      <p style="margin-right: 10px;">Категории:</p>
       <%= select_tag "category", options_from_collection_for_select(Category.all, "id", "name") %>
     </div>
 </div>
@@ -9,7 +10,7 @@
     <div class="mt-sm container">
     <%= render task %> 
     </div>
-<% end %>
+  <% end %>
 
 <div class="container">
     <p class="mt">
