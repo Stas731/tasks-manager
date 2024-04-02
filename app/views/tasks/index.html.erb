@@ -1,0 +1,22 @@
+<div class="container mt-sm">
+  <h2 class="title-lg ">Все задачи:</h2>
+    <div class="mt-sm" style="display: flex; align-items: center;">
+      <p style="margin-right: 10px;">Категории:</p>
+      <%= select_tag "category", options_from_collection_for_select(Category.all, "id", "name") %>
+    </div>
+</div>
+
+<% @tasks.each do |task| %>
+  <div class="mt-sm container">
+    <%= render task %> 
+    <p>
+      <%= link_to "Посмотреть задачу", task_path(task), class: 'button button-main' %>
+    </p>
+  </div>
+<% end %>
+
+<div class="container">
+  <p class="mt">
+    <%= link_to "Создать новую задачу", new_task_path, class: 'button button-main' %>
+  </p>
+</div>

@@ -1,0 +1,15 @@
+<div class="container mt-sm">
+  <h2 class="title-lg ">Все теги:</h2>
+</div>
+
+  <% @tags.each do |tag| %>
+    <div class="mt-sm container">
+    <%= render tag %> 
+    </div>
+<% end %>
+
+<div class="container">
+    <p class="mt">
+      <%= link_to "Создать новый тег", new_tag_path, class: 'button button-main' %>
+    </p>
+</div>
