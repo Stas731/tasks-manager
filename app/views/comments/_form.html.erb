@@ -1,0 +1,5 @@
+<%= form_with model: comment do |form| %>
+    <p><%= form.text_field :content, class: 'form-text-field' %></p>
+  
+    <p class="mt"><%= form.submit 'Сохранить комментарий', class: 'button button-main'%></p>
+  <% end %>
