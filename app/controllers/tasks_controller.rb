@@ -20,21 +20,23 @@ class TasksController < ApplicationController
   end
 
   # POST /tasks
-  def create
-    @task = Task.new(task_params)
-    tag_names = params[:task][:tag_names].split(',')
+# POST /tasks
+def create
+  @task = current_user.tasks.build(task_params)
+  tag_names = params[:task][:tag_names].split(',')
 
-    tag_names.each do |tag_name|
-      @tag = Tag.find_or_create_by(name: tag_name.strip)
-      @task.tags << @tag
-    end
-
-    if @task.save
-      redirect_to @task, notice: 'Task was successfully created.'
-    else
-      render :new
-    end
+  tag_names.each do |tag_name|
+    @tag = Tag.find_or_create_by(name: tag_name.strip)
+    @task.tags << @tag
   end
+
+  if @task.save
+    redirect_to @task, notice: 'Task was successfully created.'
+  else
+    render :new
+  end
+end
+
 
   # PATCH/PUT /tasks/1
   def update
@@ -59,6 +61,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:title, :description, :user_id, :category_id)
+      params.require(:task).permit(:title, :description, :category_id)
     end
 end
