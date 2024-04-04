@@ -1,0 +1,15 @@
+<%= form_with model: task do |form| %>
+  <p><%= form.label :title, "Название задачи" %></p>
+  <p><%= form.text_field :title, class: 'form-text-field' %></p>
+
+  <p><%= form.label :description, "Описание задачи" %></p>
+  <p><%= form.text_area :description, rows: 5, class: 'form-text-area' %></p>
+
+  <p class="mt"><%= form.label :category_id, "Категория" %></p>
+  <p><%= form.collection_select :category_id, Category.all, :id, :name, {}, {class: 'form-select-field'} %></p>
+
+  <p class="mt"><%= form.label :tag_names, "Добавить теги" %></p>
+  <p><%= form.text_field :tag_names, class: 'form-text-field' %></p>
+
+  <p class="mt"><%= form.submit 'Сохранить задачу', class: 'button button-main'%></p>
+<% end %>
